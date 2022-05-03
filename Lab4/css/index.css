@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+}
+p {
+    font-size: 120%;
+}
+li:nth-of-type(1) > a {
+    color: rgb(157, 42, 42);
+}
+li:nth-of-type(1) > a:visited {
+    color: rgb(101, 81, 81);
+}
+
+li:nth-of-type(2) > a {
+    color: rgb(86, 6, 70);
+}
+li:nth-of-type(2) > a:visited {
+    color: rgb(229, 33, 208);
+}
+
+li:nth-of-type(3) > a {
+    color: rgb(12, 2, 35);
+}
+li:nth-of-type(3) > a:visited {
+    color: rgb(61, 29, 54);
+}
+
+li:nth-of-type(4) > a {
+    color: rgb(26, 70, 40);
+}
+li:nth-of-type(4) > a:visited {
+    color: rgb(64, 213, 112);
+}
+
+
+li { margin: 10px 0;
+    list-style: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    flex-wrap:wrap;
+}
+
+
+
+@media (min-width: 993px) {
+    li {
+        flex: 1;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 992px) {
+    li {
+        flex: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    li {
+        flex: 100%;
+    }
+}
