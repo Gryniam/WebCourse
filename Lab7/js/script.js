@@ -27,6 +27,7 @@ function  triangle(first, first1, second, second1){
             }
             if(!haveHipotenuse){
                 getDataWithoutHipotenuse(myTriangle);
+
             }
 
         }
@@ -116,10 +117,10 @@ function fillExistParams(first, first1, second, second1){
         if(first === "hypotenuse"){
             myTriangle.hypotenuse = first1;
         }
-        if(first === "adjacent_angle"){
+        if(first === "adjacent angle"){
             myTriangle.adjacent_angle = getGradus(first1);
         }
-        if(first === "opposite_angle" || "angle"){
+        if(first === "opposite angle" || first1 === "angle"){
             myTriangle.opposite_angle = getGradus(first1);
         }
         if(second === "leg"){
@@ -131,7 +132,7 @@ function fillExistParams(first, first1, second, second1){
         if(second === "adjacent_angle"){
             myTriangle.adjacent_angle = getGradus(second1);
         }
-        if(second === "opposite_angle"|| "angle"){
+        if(second === "opposite angle"|| first1 === "angle"){
             myTriangle.opposite_angle = getGradus(second1);
         }
     }
@@ -142,10 +143,10 @@ function fillExistParams(first, first1, second, second1){
         if(first1 === "hypotenuse"){
             myTriangle.hypotenuse = first;
         }
-        if(first1 === "adjacent_angle"){
+        if(first1 === "adjacent angle"){
             myTriangle.adjacent_angle = getGradus(first);
         }
-        if(first1 === "opposite_angle"|| "angle"){
+        if(first1 === "opposite angle"|| first1 === "angle"){
             myTriangle.opposite_angle = getGradus(first);
         }
         if(second1 === "leg"){
@@ -154,10 +155,10 @@ function fillExistParams(first, first1, second, second1){
         if(second1 === "hypotenuse"){
             myTriangle.hypotenuse = second;
         }
-        if(second1 === "adjacent_angle"){
+        if(second1 === "adjacent angle"){
             myTriangle.adjacent_angle = getGradus(second);
         }
-        if(second1 === "opposite_angle"|| "angle"){
+        if(second1 === "opposite angle"|| first1 === "angle"){
             myTriangle.opposite_angle = getGradus(second);
         }
     }
