@@ -118,10 +118,10 @@ function fillExistParams(first, first1, second, second1){
             myTriangle.hypotenuse = first1;
         }
         if(first === "adjacent angle"){
-            myTriangle.adjacent_angle = getGradus(first1);
+            myTriangle.adjacent_angle = first1;
         }
         if(first === "opposite angle" || first1 === "angle"){
-            myTriangle.opposite_angle = getGradus(first1);
+            myTriangle.opposite_angle = first1;
         }
         if(second === "leg"){
             myTriangle.firstleg = second1;
@@ -130,10 +130,10 @@ function fillExistParams(first, first1, second, second1){
             myTriangle.hypotenuse = second1;
         }
         if(second === "adjacent_angle"){
-            myTriangle.adjacent_angle = getGradus(second1);
+            myTriangle.adjacent_angle = second1;
         }
         if(second === "opposite angle"|| first1 === "angle"){
-            myTriangle.opposite_angle = getGradus(second1);
+            myTriangle.opposite_angle = second1;
         }
     }
     else{
@@ -144,10 +144,10 @@ function fillExistParams(first, first1, second, second1){
             myTriangle.hypotenuse = first;
         }
         if(first1 === "adjacent angle"){
-            myTriangle.adjacent_angle = getGradus(first);
+            myTriangle.adjacent_angle = first;
         }
         if(first1 === "opposite angle"|| first1 === "angle"){
-            myTriangle.opposite_angle = getGradus(first);
+            myTriangle.opposite_angle = first;
         }
         if(second1 === "leg"){
             myTriangle.firstleg = second;
@@ -156,10 +156,10 @@ function fillExistParams(first, first1, second, second1){
             myTriangle.hypotenuse = second;
         }
         if(second1 === "adjacent angle"){
-            myTriangle.adjacent_angle = getGradus(second);
+            myTriangle.adjacent_angle = second;
         }
         if(second1 === "opposite angle"|| first1 === "angle"){
-            myTriangle.opposite_angle = getGradus(second);
+            myTriangle.opposite_angle = second;
         }
     }
 
@@ -177,10 +177,16 @@ function getHipotenuseStatus(first, first1, second, second1){
     }
     return  false;
 }
+
 //Конвертить радіани в градуси
 function getGradus(radian){
     return radian * 180/Math.PI;
 }
+function getRadian(gradus){
+    return (gradus * Math.PI)/180;
+}
+
+
 
 function validationByMath(myTriangle){
     let hipotenuse = myTriangle.hypotenuse;
@@ -188,13 +194,13 @@ function validationByMath(myTriangle){
     if(myTriangle.firstleg > hipotenuse && myTriangle.hypotenuse != 0){
         return false;
     }
-    if(myTriangle.adjacent_angle > 90 || myTriangle.opposite_angle > 90){
+    if(getGradus(myTriangle.adjacent_angle) > 90 || getGradus(myTriangle.opposite_angle) > 90){
         return  false;
     }
-    if(((myTriangle.adjacent_angle + myTriangle.opposite_angle) != 90) && (myTriangle.adjacent_angle != 0 && myTriangle.adjacent_angle != 0)){
+    if(((getGradus(myTriangle.adjacent_angle) + getGradus(myTriangle.opposite_angle)) != 90) && (getGradus(myTriangle.adjacent_angle) != 0 && getGradus(myTriangle.adjacent_angle) != 0)){
         return false;
     }
-    if(myTriangle.adjacent_angle <0 || myTriangle.opposite_angle < 0 || myTriangle.hypotenuse <0 || myTriangle.firstleg <0 || myTriangle.secondleg < 0){
+    if(getGradus(myTriangle.adjacent_angle) <0 || getGradus(myTriangle.opposite_angle) < 0 || myTriangle.hypotenuse <0 || myTriangle.firstleg <0 || myTriangle.secondleg < 0){
         return false;
     }
     return true;
@@ -219,9 +225,9 @@ function getDataWithHypotenuse(triangle)
         return;
     }
     if(triangle.opposite_angle != 0){
-        triangle.adjacent_angle = 90 - triangle.opposite_angle;
-        triangle.firstleg = triangle.hypotenuse * Math.sin(triangle.opposite_angle);
-        triangle.secondleg = triangle.hypotenuse * Math.sin(triangle.adjacent_angle);
+        triangle.adjacent_angle = 90 - getGradus(myTriangle.opposite_angle);
+        triangle.firstleg = triangle.hypotenuse * Math.sin(myTriangle.opposite_angle);
+        triangle.secondleg = triangle.hypotenuse * Math.sin(getRadian(myTriangle.adjacent_angle));
         show(triangle);
         return;
     }
@@ -237,14 +243,14 @@ function  getDataWithoutHipotenuse(triangle){
     if(triangle.adjacent_angle != 0 && triangle.firstleg != 0){
         triangle.hypotenuse = triangle.firstleg / Math.cos(triangle.adjacent_angle);
         triangle.secondleg = triangle.firstleg * Math.tan(triangle.adjacent_angle);
-        triangle.opposite_angle = 90 - triangle.adjacent_angle;
+        triangle.opposite_angle = 90 - getGradus(myTriangle.adjacent_angle);
         show(triangle);
         return;
     }
     if(triangle.opposite_angle != 0 && triangle.firstleg != 0){
         triangle.hypotenuse = triangle.firstleg/Math.sin(triangle.opposite_angle);
-        triangle.adjacent_angle = 90 - triangle.opposite_angle;
-        triangle.secondleg = triangle.firstleg * Math.tan(triangle.adjacent_angle);
+        triangle.adjacent_angle = 90 - getGradus(myTriangle.opposite_angle);
+        triangle.secondleg = triangle.firstleg * Math.tan(getRadian(myTriangle.adjacent_angle));
         show(triangle);
         return;
     }
@@ -255,6 +261,17 @@ function show(triangle){
     console.log("Гіпотенуза " + triangle.hypotenuse);
     console.log("Протилежний катет" + triangle.firstleg);
     console.log("Прилеглий катет " + triangle.secondleg);
-    console.log("Протилежний від катета кут "+ triangle.opposite_angle);
-    console.log("Прилеглий до катета кут " + triangle.adjacent_angle);
+    if(triangle.opposite_angle > 10){
+        console.log("Протилежний від катета кут "+ triangle.opposite_angle);
+    }
+    else{
+        console.log("Протилежний від катета кут "+ getGradus(myTriangle.opposite_angle));
+    }
+    if(triangle.adjacent_angle>10){
+        console.log("Прилеглий до катета кут " + triangle.adjacent_angle);
+    }
+    else{
+        console.log("Прилеглий до катета кут " + getGradus(myTriangle.adjacent_angle));
+    }
+
 }
