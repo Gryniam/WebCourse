@@ -118,10 +118,10 @@ function fillExistParams(first, first1, second, second1){
             myTriangle.hypotenuse = first1;
         }
         if(first === "adjacent angle"){
-            myTriangle.adjacent_angle = first1;
+            myTriangle.adjacent_angle =getRadian(first1);
         }
         if(first === "opposite angle" || first1 === "angle"){
-            myTriangle.opposite_angle = first1;
+            myTriangle.opposite_angle = getRadian(first1);
         }
         if(second === "leg"){
             myTriangle.firstleg = second1;
@@ -130,10 +130,10 @@ function fillExistParams(first, first1, second, second1){
             myTriangle.hypotenuse = second1;
         }
         if(second === "adjacent_angle"){
-            myTriangle.adjacent_angle = second1;
+            myTriangle.adjacent_angle = getRadian(second1);
         }
         if(second === "opposite angle"|| first1 === "angle"){
-            myTriangle.opposite_angle = second1;
+            myTriangle.opposite_angle = getRadian(second1);
         }
     }
     else{
@@ -144,10 +144,10 @@ function fillExistParams(first, first1, second, second1){
             myTriangle.hypotenuse = first;
         }
         if(first1 === "adjacent angle"){
-            myTriangle.adjacent_angle = first;
+            myTriangle.adjacent_angle = getRadian(first);
         }
         if(first1 === "opposite angle"|| first1 === "angle"){
-            myTriangle.opposite_angle = first;
+            myTriangle.opposite_angle = getRadian(first);
         }
         if(second1 === "leg"){
             myTriangle.firstleg = second;
@@ -156,10 +156,10 @@ function fillExistParams(first, first1, second, second1){
             myTriangle.hypotenuse = second;
         }
         if(second1 === "adjacent angle"){
-            myTriangle.adjacent_angle = second;
+            myTriangle.adjacent_angle = getRadian(second);
         }
         if(second1 === "opposite angle"|| first1 === "angle"){
-            myTriangle.opposite_angle = second;
+            myTriangle.opposite_angle = getRadian(second);
         }
     }
 
