@@ -183,7 +183,7 @@
 
         ns.loadSpecials = function (categoryShort) {
             showLoading("#Main__Home");
-            var randomCategoriesJSON = ["A", "B", "C", "D", "E", "F"].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+            var randomCategoriesJSON = ["A", "B", "C", "D"].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
             $ajaxUtils.sendGetRequest(catalogItemsUrl + randomCategoriesJSON + ".json", buildAndShowCatalogItemsHTML);
         };
 
