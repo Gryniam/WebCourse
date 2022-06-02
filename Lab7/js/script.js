@@ -159,7 +159,7 @@ function triangle(argument_1, type_1, argument_2, type_2){
                 console.log("Використовується значення за замовчуванням a = "+a);
             }
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
-            checkAngleFotNotFill(argument_2);
+
             if(type2){
                     alpha=argument_2;
 
@@ -184,7 +184,7 @@ function triangle(argument_1, type_1, argument_2, type_2){
                 console.log("Використовується значення за замовчуванням a = "+a);
             }
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
-            checkAngleFotNotFill(argument_2);
+
             if(type2){
                     beta=argument_2;
             }
@@ -205,14 +205,9 @@ function triangle(argument_1, type_1, argument_2, type_2){
                 console.log("c<0 використовується значення за замовчуванням c = "+c);
             }
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
-            checkAngleFotNotFill(argument_2);
+
             if(type2){
-
                     alpha=argument_2;
-
-
-
-
             }
             else{
                 console.log("Використовується значення за замовчуванням alpha = "+alpha);
@@ -255,7 +250,7 @@ function triangle(argument_1, type_1, argument_2, type_2){
                 console.log("Використовується значення за замовчуванням a = "+a);
             }
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
-            checkAngleFotNotFill(argument_1);
+
             if(type2){
 
                     alpha=argument_1;
@@ -277,7 +272,7 @@ function triangle(argument_1, type_1, argument_2, type_2){
                 console.log("Використовується значення за замовчуванням a = "+a);
             }
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
-            checkAngleFotNotFill(argument_1);
+
             if(type2){
 
                     beta=argument_1;
@@ -303,7 +298,7 @@ function triangle(argument_1, type_1, argument_2, type_2){
                 console.log("c<0 використовується значення за замовчуванням c = "+c);
             }
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
-            checkAngleFotNotFill(argument_1);
+
             if(type2){
 
                     alpha=argument_1;
