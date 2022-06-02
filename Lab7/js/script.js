@@ -6,7 +6,7 @@ console.log('adjacent angle        прилеглий до катета кут')
 console.log('opposite angle        протилежний до катета кут');
 console.log('angle                 один з двох гострих кутів(коли задана гіпотенуза)');
 
-var type1=true, type2=true, type3 = true;
+var type1=true, type2=true;
 
 
 function check_negative(argument_1, type_1, argument_2, type_2){
@@ -93,20 +93,11 @@ function check_blunt_angle(argument_1, type_1, argument_2, type_2){
     }
 }
 
-function checkAngleFotNotFill(arg){
-    if(arg%10 == 0){
-        type3 = true;
-    }
-    else{
-        type3 = false;
-    }
-}
 
 
 function triangle(argument_1, type_1, argument_2, type_2){
     type1=true
     type2=true;
-    type3 = true;
     var a=5, b=9, c=10.3, alpha=29.0546, beta=60.9454;
     //неправилдльна к-сть аргументів введено
     if (argument_1 == undefined || type_1 == undefined || argument_2== undefined || type_2 == undefined ) {
@@ -170,12 +161,10 @@ function triangle(argument_1, type_1, argument_2, type_2){
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
             checkAngleFotNotFill(argument_2);
             if(type2){
-                if(type3){
                     alpha=argument_2;
-                }
-                else{
-                    console.log("Використовується значення за замовчуванням alpha бо введений кут не є цілим = "+alpha);
-                }
+
+
+
             }
             else{
                 console.log("Використовується значення за замовчуванням alpha бо кут є від'ємним = "+alpha);
@@ -197,12 +186,7 @@ function triangle(argument_1, type_1, argument_2, type_2){
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
             checkAngleFotNotFill(argument_2);
             if(type2){
-                if(type3){
                     beta=argument_2;
-                }
-                else{
-                    console.log("Використовується значення за замовчуванням alpha бо введений кут не є цілим = "+beta);
-                }
             }
             else{
                 console.log("Використовується значення за замовчуванням beta = "+beta);
@@ -223,12 +207,12 @@ function triangle(argument_1, type_1, argument_2, type_2){
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
             checkAngleFotNotFill(argument_2);
             if(type2){
-                if(type3){
+
                     alpha=argument_2;
-                }
-                else{
-                    console.log("Використовується значення за замовчуванням alpha бо введений кут не є цілим = "+alpha);
-                }
+
+
+
+
             }
             else{
                 console.log("Використовується значення за замовчуванням alpha = "+alpha);
@@ -273,12 +257,9 @@ function triangle(argument_1, type_1, argument_2, type_2){
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
             checkAngleFotNotFill(argument_1);
             if(type2){
-                if(type3){
+
                     alpha=argument_1;
-                }
-                else{
-                    console.log("Використовується значення за замовчуванням alpha бо введений кут не є цілим = "+alpha);
-                }
+
             }
             else{
                 console.log("Використовується значення за замовчуванням alpha = "+alpha);
@@ -298,12 +279,12 @@ function triangle(argument_1, type_1, argument_2, type_2){
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
             checkAngleFotNotFill(argument_1);
             if(type2){
-                if(type3){
+
                     beta=argument_1;
-                }
-                else{
-                    console.log("Використовується значення за замовчуванням alpha бо введений кут не є цілим = "+beta);
-                }
+
+
+
+
             }
             else{
                 console.log("Використовується значення за замовчуванням beta = "+beta);
@@ -324,12 +305,10 @@ function triangle(argument_1, type_1, argument_2, type_2){
             check_blunt_angle(argument_1, type_1, argument_2, type_2);
             checkAngleFotNotFill(argument_1);
             if(type2){
-                if(type3){
+
                     alpha=argument_1;
-                }
-                else{
-                    console.log("Використовується значення за замовчуванням alpha бо введений кут не є цілим = "+alpha);
-                }
+
+
             }
             else{
                 console.log("Використовується значення за замовчуванням alpha = "+alpha);
